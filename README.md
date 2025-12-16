@@ -1,187 +1,402 @@
-````markdown
-# 🎨 Air Canvas with Depth-Anything V2
-
 <div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
-[![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Tracking-orange?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/mediapipe)
-[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+<!-- Animated Header with Gradient Effect -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=🎨%20Air%20Canvas&fontSize=80&fontAlignY=35&animation=twinkling&desc=Touch-Free%20Drawing%20Powered%20by%20AI%20Depth%20Sensing&descAlignY=55&descSize=20" width="100%"/>
 
-**Draw in the air using hand gestures, empowered by AI depth estimation.**
+<br/>
 
-[View Demo](#-demo) • [Installation](#-installation) • [Controls](#-controls--shortcuts) • [Configuration](#-configuration)
+<!-- Animated Badges -->
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.10-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white&labelColor=1a1a2e)](https://opencv.org/)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10-00A884?style=for-the-badge&logo=google&logoColor=white&labelColor=1a1a2e)](https://mediapipe.dev/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.4-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white&labelColor=1a1a2e)](https://pytorch.org/)
+[![License](https://img.shields.io/badge/License-MIT-F7DF1E?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=1a1a2e)](LICENSE)
+
+<br/>
+
+<!-- Typing Animation Effect -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&repeat=false&width=700&height=100&lines=Draw+in+thin+air+using+hand+gestures+%F0%9F%96%90%EF%B8%8F;Powered+by+AI+Depth+Estimation+%F0%9F%A7%A0;Real-time+computer+vision+magic+%E2%9C%A8" alt="Typing SVG" /></a>
+
+<br/>
+
+<!-- Quick Navigation -->
+[**🚀 Quick Start**](#-quick-start) •
+[**✨ Features**](#-features) •
+[**🎮 Controls**](#-controls--shortcuts) •
+[**⚙️ Configuration**](#%EF%B8%8F-configuration) •
+[**📖 Documentation**](#-documentation)
+
+<br/>
+
+<!-- Demo GIF Placeholder -->
+<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100%"/>
 
 </div>
 
 ---
 
-## 📖 Overview
+## 🔮 What is Air Canvas?
 
-**Air Canvas** transforms your webcam into a touch-free drawing tablet. By combining **MediaPipe** for precise hand tracking and **Depth-Anything V2** for intelligent depth estimation, this application distinguishes between your hand moving *over* the canvas versus *touching* it.
+<table>
+<tr>
+<td width="60%">
 
-It's not just a toy—it's a fully functional drawing tool with shape primitives, saving capabilities, and even Optical Character Recognition (OCR) to convert your air-writing into text!
+**Air Canvas** is an innovative computer vision application that transforms your webcam into a **touch-free digital drawing tablet**. 
 
-## ✨ Key Features
+By leveraging the power of **MediaPipe** for precision hand tracking and **Depth-Anything V2** for intelligent depth perception, Air Canvas can distinguish between you hovering your hand *over* the canvas versus actually *touching* it — just like a real pen on paper!
 
-- **✋ AI Hand Tracking**: Real-time, low-latency tracking of fingertips using MediaPipe.
-- **🧠 Depth-Aware Interaction**: Uses **Depth-Anything V2** to detect "touch" depth, allowing you to hover without drawing.
-- **🖌️ Creative Tools**:
-  - **Free Draw**: Sketch naturally with smooth spline interpolation.
-  - **Shapes**: Instant **Lines**, **Rectangles**, and **Circles**.
-  - **Eraser**: Intuitive erasing tool.
-- **🎨 Dynamic Palette**: Change colors and brush sizes with virtual buttons.
-- **📷 Smart Features**:
-  - **OCR**: Convert drawn text to digital string on the fly.
-  - **Screenshots**: Save your masterpiece with a single keystroke.
-  - **Image Processing**: Real-time brightness and contrast adjustment.
+Whether you're sketching, prototyping, or just having fun, Air Canvas makes digital art accessible without any physical touch.
+
+</td>
+<td width="40%">
+
+```
+    ╔═══════════════════════╗
+    ║    🖐️ YOUR HAND      ║
+    ║         ↓             ║
+    ║    📷 WEBCAM         ║
+    ║         ↓             ║
+    ║    🧠 AI PROCESSING   ║
+    ║         ↓             ║
+    ║    🎨 CANVAS         ║
+    ╚═══════════════════════╝
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🚀 Installation
+## ✨ Features
 
-### 1. Clone the Repository
+<div align="center">
+
+| Feature | Description |
+|:---:|:---|
+| 🖐️ **AI Hand Tracking** | Ultra-responsive finger detection using MediaPipe with Kalman filtering for silky-smooth cursor movement |
+| 🧠 **Depth Perception** | Depth-Anything V2 integration enables hover vs. draw distinction — lift to pause, lower to draw! |
+| ✏️ **Free Draw** | Smooth strokes with Catmull-Rom spline interpolation for natural, flowing lines |
+| 📐 **Shape Tools** | Instant geometric primitives: **Lines**, **Rectangles**, and **Circles** |
+| 🧽 **Eraser** | Multiple eraser sizes for precise corrections |
+| 🎨 **Dynamic Palette** | Real-time color and brush size selection via virtual UI |
+| 🔤 **OCR Integration** | Convert handwritten air-drawings to digital text using Tesseract |
+| 📸 **Screenshot Export** | Save your artwork instantly with a single keystroke |
+| 🔧 **Live Config Reload** | Modify `config.yaml` and apply changes without restarting |
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+```mermaid
+flowchart TD
+    subgraph Input["📹 Input Layer"]
+        A[Webcam Feed]
+    end
+    
+    subgraph Processing["🧠 AI Processing"]
+        B[MediaPipe Hands]
+        C[Depth-Anything V2]
+        D[Kalman Filter]
+    end
+    
+    subgraph Logic["⚡ Application Logic"]
+        E[Gesture Detection]
+        F[Drawing Engine]
+        G[UI Manager]
+    end
+    
+    subgraph Output["🖥️ Output Layer"]
+        H[Canvas Window]
+        I[Depth Visualization]
+        J[Webcam Preview]
+    end
+    
+    A --> B --> D --> E
+    A --> C --> E
+    E --> F --> H
+    E --> G --> J
+    C --> I
+    
+    style Input fill:#4f46e5,color:#fff
+    style Processing fill:#7c3aed,color:#fff
+    style Logic fill:#a855f7,color:#fff
+    style Output fill:#c084fc,color:#fff
+```
+
+</div>
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+> [!IMPORTANT]
+> Make sure you have the following installed before proceeding:
+> - **Python 3.8+** with pip
+> - **CUDA-capable GPU** (recommended for depth estimation)
+> - **Webcam** connected to your system
+
+### Step 1: Clone the Repository
+
 ```bash
-git clone [https://github.com/Rcidshacker/Air-canvas-new.git](https://github.com/Rcidshacker/Air-canvas-new.git)
+git clone https://github.com/Rcidshacker/Air-canvas-new.git
 cd Air-canvas-new
-````
+```
 
-### 2\. Set Up Virtual Environment
+### Step 2: Create Virtual Environment
 
-It is highly recommended to use a virtual environment to manage dependencies.
+<details>
+<summary><b>🪟 Windows</b></summary>
 
-\<details\>
-\<summary\>\<strong\>Click to show instructions for Windows / Mac / Linux\</strong\>\</summary\>
-
-#### Windows
-
-```bash
+```powershell
 python -m venv .depthv2
 .\.depthv2\Scripts\activate
 ```
 
-#### Mac / Linux
+</details>
+
+<details>
+<summary><b>🐧 Linux / 🍎 macOS</b></summary>
 
 ```bash
 python3 -m venv .depthv2
 source .depthv2/bin/activate
 ```
 
-\</details\>
+</details>
 
-### 3\. Install Dependencies
+### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4\. Install Tesseract OCR (Required for Text Recognition)
+### Step 4: Install Tesseract OCR
 
-This project uses Tesseract for OCR features.
+<details>
+<summary><b>📦 Click to expand installation instructions</b></summary>
 
-  - **Windows**: Download the installer from [UB-Mannheim/tesseract](https://www.google.com/search?q=https://github.com/UB-Mannheim/tesseract/wiki).
-      - *Note: Ensure the path in `depthtrack.py` matches your installation (Default: `C:\Program Files\Tesseract-OCR\tesseract.exe`).*
-  - **Linux**: `sudo apt-get install tesseract-ocr`
-  - **Mac**: `brew install tesseract`
+| Platform | Installation Command |
+|:---:|:---|
+| **Windows** | Download from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki) |
+| **Linux** | `sudo apt-get install tesseract-ocr` |
+| **macOS** | `brew install tesseract` |
 
-### 5\. Download Model Weights ⚠️
+> [!NOTE]
+> **Windows Users**: Ensure the path in `depthtrack.py` (line 18) matches your Tesseract installation path.
+> Default: `C:\Program Files\Tesseract-OCR\tesseract.exe`
 
-**Crucial Step**: You must manually download the depth model weights as they are too large for GitHub.
+</details>
 
-1.  Download **`depth_anything_v2_vits.pth`** from the [Depth-Anything V2 Repository](https://github.com/DepthAnything/Depth-Anything-V2).
-2.  Create a folder named `model_weights` in the project root.
-3.  Place the `.pth` file inside `model_weights/`.
+### Step 5: Download Model Weights
 
------
+> [!CAUTION]
+> **This step is mandatory!** The depth model weights are too large to include in the repository.
 
-## 🎮 Controls & Shortcuts
+1. Visit the [Depth-Anything V2 Repository](https://github.com/DepthAnything/Depth-Anything-V2)
+2. Download **`depth_anything_v2_vits.pth`**
+3. Create a `model_weights/` folder in the project root
+4. Place the `.pth` file inside:
 
-### Hand Gestures
-
-| Gesture | Action |
-| :--- | :--- |
-| **Index Finger Point** | Move Cursor (Hover) |
-| **Pinch (Index + Thumb)** | **Draw / Select Tool** (Simulates Mouse Click) |
-
-### Keyboard Shortcuts
-
-| Key | Function |
-| :---: | :--- |
-| **`r`** | **Reset/Clear** the Canvas |
-| **`s`** | **Save Screenshot** (Saved to project folder) |
-| **`o`** | **OCR**: Read text from canvas and print to console |
-| **`u`** | **Update Config**: Reload `config.yaml` without restarting |
-| **`b`** / **`v`** | Increase / Decrease **Brightness** |
-| **`c`** / **`x`** | Increase / Decrease **Contrast** |
-| **`ESC`** | **Quit** Application |
-
------
-
-## ⚙️ Configuration
-
-You can customize the application behavior by editing `config.yaml`. No coding required\!
-
-```yaml
-# Example settings in config.yaml
-window_width: 1280       # Canvas width
-use_depth: true          # Toggle AI depth estimation
-brush_sizes: [5, 10, 15] # Available brush sizes
-colors:                  # RGB Color palette
-  - [255, 255, 255]      # White
-  - [0, 0, 0]            # Black
-  - [255, 0, 0]          # Red
+```
+📦 Air-canvas-new/
+ ┗ 📂 model_weights/
+   ┗ 📜 depth_anything_v2_vits.pth  ← Place here!
 ```
 
------
-
-## ▶️ How to Run
-
-Ensure your webcam is connected and you have activated your virtual environment.
+### Step 6: Run the Application! 🎉
 
 ```bash
 python depthtrack.py
 ```
 
------
+---
+
+## 🎮 Controls & Shortcuts
+
+### ✋ Hand Gestures
+
+<div align="center">
+
+| Gesture | Visual | Action |
+|:---:|:---:|:---|
+| **Point** | ☝️ | Move cursor (hover mode) |
+| **Pinch** | 🤏 | Draw / Select (thumb + index finger close) |
+| **Release** | ✋ | Stop drawing (fingers apart) |
+
+</div>
+
+### ⌨️ Keyboard Shortcuts
+
+<div align="center">
+
+| Key | Icon | Function |
+|:---:|:---:|:---|
+| <kbd>R</kbd> | 🗑️ | **Reset** — Clear the entire canvas |
+| <kbd>S</kbd> | 📸 | **Screenshot** — Save current canvas as PNG |
+| <kbd>O</kbd> | 🔤 | **OCR** — Read text from canvas |
+| <kbd>U</kbd> | 🔄 | **Update** — Reload config without restart |
+| <kbd>B</kbd> / <kbd>V</kbd> | ☀️ | **Brightness** — Increase / Decrease |
+| <kbd>C</kbd> / <kbd>X</kbd> | 🎚️ | **Contrast** — Increase / Decrease |
+| <kbd>ESC</kbd> | ❌ | **Quit** — Exit application |
+
+</div>
+
+---
+
+## ⚙️ Configuration
+
+Customize every aspect of Air Canvas by editing `config.yaml`:
+
+```yaml
+# 🖼️ Display Settings
+window_width: 1280
+window_height: 800
+
+# 🧠 AI Settings
+use_depth: true           # Toggle depth estimation
+depth_threshold: 0.6      # Sensitivity for "touch" detection
+device: 'cuda'            # Use 'cpu' if no GPU available
+
+# 🎨 Drawing Tools
+brush_sizes: [5, 10, 15]
+eraser_sizes: [20, 40]
+colors:
+  - [255, 255, 255]       # White
+  - [0, 0, 0]             # Black
+  - [255, 0, 0]           # Red
+  - [0, 255, 0]           # Green
+  - [0, 0, 255]           # Blue
+  - [255, 255, 0]         # Yellow
+
+# 🎯 Gesture Sensitivity
+multi_pinch_threshold: 60
+multi_separation_threshold: 50
+
+# 📏 Smoothing (Kalman Filter)
+kalman_process_noise: 1e-3
+kalman_measurement_noise: 0.1
+```
+
+> [!TIP]
+> Press <kbd>U</kbd> while running to reload config changes **without restarting** the app!
+
+---
 
 ## 📂 Project Structure
 
-```text
+```
 📦 Air-canvas-new
- ┣ 📂 model_weights       # ⚠️ Place depth_anything_v2_vits.pth here
- ┣ 📂 utils               # Utility scripts
- ┣ 📜 depthtrack.py       # Main Application Entry Point
- ┣ 📜 config.yaml         # User Configuration
- ┣ 📜 requirements.txt    # Python Dependencies
- ┣ 🖼️ circle.png          # UI Asset
- ┣ 🖼️ cursor.png          # UI Asset
- ┣ 🖼️ draw.png            # UI Asset
- ┗ 📜 README.md           # Documentation
+ ┣ 📂 model_weights/          # ⚠️ Place depth model here
+ ┃  ┗ 📜 depth_anything_v2_vits.pth
+ ┣ 📜 depthtrack.py           # 🚀 Main application entry point
+ ┣ 📜 config.yaml             # ⚙️ User configuration
+ ┣ 📜 requirements.txt        # 📦 Python dependencies
+ ┣ 🖼️ cursor.png              # 🎯 UI Cursor asset
+ ┣ 🖼️ draw.png                # ✏️ Draw tool icon
+ ┣ 🖼️ eraser.png              # 🧽 Eraser tool icon
+ ┣ 🖼️ line.png                # 📏 Line tool icon
+ ┣ 🖼️ rectangle.png           # ⬛ Rectangle tool icon
+ ┣ 🖼️ circle.png              # ⭕ Circle tool icon
+ ┗ 📜 README.md               # 📖 This file!
 ```
 
------
+---
+
+## 📖 Documentation
+
+### How It Works
+
+```mermaid
+sequenceDiagram
+    participant User as 👤 User
+    participant Cam as 📷 Webcam
+    participant MP as 🤚 MediaPipe
+    participant DA as 🧠 Depth-Anything
+    participant App as 🎨 Air Canvas
+    
+    User->>Cam: Wave hand in air
+    Cam->>MP: Video frame
+    MP->>App: Hand landmarks (21 points)
+    Cam->>DA: Same frame
+    DA->>App: Depth map
+    App->>App: Calculate pinch gesture
+    App->>App: Check depth threshold
+    alt Pinching + Close to camera
+        App->>App: Draw on canvas
+    else Not pinching OR far from camera
+        App->>App: Move cursor only
+    end
+    App->>User: Display canvas + UI
+```
+
+### Key Algorithms
+
+| Algorithm | Purpose | Benefit |
+|:---|:---|:---|
+| **Catmull-Rom Spline** | Smooth curve interpolation | Natural, flowing brush strokes |
+| **Kalman Filter** | Position prediction & smoothing | Reduces hand-tracking jitter |
+| **Multi-Distance Pinch** | Precise gesture detection | Prevents accidental draws |
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome\! Feel free to open issues or submit pull requests.
+<div align="center">
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+Contributions make the open-source community an amazing place to learn, inspire, and create.  
+**Any contributions you make are greatly appreciated!**
 
------
+</div>
+
+1. **Fork** the project
+2. **Create** your feature branch: `git checkout -b feature/AmazingFeature`
+3. **Commit** your changes: `git commit -m 'Add some AmazingFeature'`
+4. **Push** to the branch: `git push origin feature/AmazingFeature`
+5. **Open** a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
 
 ## 👨‍💻 Author
 
-**Ruchit** [LinkedIn](https://www.linkedin.com/in/ruchit-das-3b6a8a252/) | [GitHub](https://github.com/Rcidshacker)
+<div align="center">
 
------
+<a href="https://github.com/Rcidshacker">
+  <img src="https://avatars.githubusercontent.com/Rcidshacker?s=200" width="100" height="100" style="border-radius: 50%;" alt="Ruchit Das"/>
+</a>
 
-\<div align="center"\>
-Made with ❤️ and Python
-\</div\>
+### **Ruchit Das**
 
-```
-```
+*Computer Vision Enthusiast • Creative Developer*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ruchit-das-3b6a8a252/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rcidshacker)
+
+</div>
+
+---
+
+<div align="center">
+
+<!-- Animated Footer -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&animation=twinkling" width="100%"/>
+
+<br/>
+
+**⭐ Star this repository if you found it helpful! ⭐**
+
+Made with ❤️ and lots of ☕
+
+</div>
